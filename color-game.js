@@ -1,5 +1,7 @@
 // console.log("connected");
-numSquares = 6;
+numSquares = 9;
+
+
 colours = generateRandomColors(numSquares);
 
 var pickedcolor = pickcolor();
@@ -11,11 +13,12 @@ var h1 = document.querySelector("h1");
 var resetbutton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
-
+var peerBtn = document.querySelector("#peerBtn");
 
 easyBtn.addEventListener("click",function(){
 	easyBtn.classList.add("selected");
 	hardBtn.classList.remove("selected");
+	peerBtn.classList.remove("selected");
 	for(var i = 3; i < numSquares; i++){
 		squares[i].style.display = "none";
 	}
@@ -23,11 +26,30 @@ easyBtn.addEventListener("click",function(){
 	reset();
 })
 
+
 hardBtn.addEventListener("click",function(){
 	hardBtn.classList.add("selected");
 	easyBtn.classList.remove("selected");
+	peerBtn.classList.remove("selected");
 
 	numSquares = 6;
+	for(var i = 3; i < 6; i++){
+		squares[i].style.display = "block";
+	}
+	for(var i = 6; i < 9; i++){
+		squares[i].style.display = "none";
+	}
+	
+	
+	reset();
+
+})
+
+peerBtn.addEventListener("click",function(){
+	peerBtn.classList.add("selected");
+	easyBtn.classList.remove("selected");
+	hardBtn.classList.remove("selected");
+	numSquares = 9;
 	for(var i = 3; i < numSquares; i++){
 		squares[i].style.display = "block";
 	}
@@ -35,6 +57,7 @@ hardBtn.addEventListener("click",function(){
 	reset();
 
 })
+
 var colorDisplay = document.querySelector("h1 span") ;
 colorDisplay.textContent = pickedcolor;
 
@@ -56,7 +79,7 @@ for(var i=0; i < squares.length; i++){
 			resetbutton.textContent = "Play again?"
 		}
 		else{
-			this.style.backgroundColor = "#232323";
+			this.style.backgroundColor = "#a8b0a7";
 			messagedisplay.textContent = "try again";
 
 		}
@@ -68,7 +91,7 @@ function reset(){
 	colours = generateRandomColors(numSquares);
 	pickedcolor = pickcolor();
 	colorDisplay.textContent = pickedcolor;
-	h1.style.backgroundColor = "steelblue";
+	h1.style.backgroundColor = "#009900";
 	for(var i = 0; i < squares.length; i++){
 		squares[i].style.backgroundColor = colours[i];
 	}
