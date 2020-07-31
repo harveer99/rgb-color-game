@@ -1,5 +1,5 @@
 body{
-	background-color: #232323;
+	background-color: #a8b0a7;
 	margin: 0;
 }
 
@@ -24,7 +24,7 @@ h1{
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
-	background: steelblue;
+	background: #009900;
 	margin: 0;
 	padding: 20px;
 	line-height: 1.1;
@@ -40,7 +40,7 @@ h1{
 }
 
 .selected{
-	background-color: steelblue;
+	background-color: #009900;
 	color: white;
 }
 
@@ -55,7 +55,7 @@ button{
 	background: none;
 	outline: none;
 	height: 100%;
-	color: steelblue;
+	color: #009900;
 	letter-spacing: 1px;
 	font-weight: bold;
 	transition: all 0.3s;
@@ -68,5 +68,5 @@ button{
 
 button:hover{
 	color: white;
-	background: steelblue;
+	background: #009900;
 }
